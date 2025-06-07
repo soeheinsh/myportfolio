@@ -15,7 +15,7 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <img
-              src="/lovable-uploads/fe2372a7-aea8-42bc-a221-96111293cb48.png"
+              src="/lovable-uploads/b74851fa-3b87-4588-9319-133a74e3f0d0.png"
               alt="Soe Hein"
               className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-primary/20 shadow-lg"
             />
