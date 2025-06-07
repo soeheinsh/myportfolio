@@ -34,9 +34,9 @@ export const Header = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled 
         ? "bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-sm" 
-        : "bg-transparent"
+        : "bg-background/90 backdrop-blur-sm"
     }`}>
-      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl sm:text-2xl font-bold text-primary tracking-tight">
             Soe Hein
