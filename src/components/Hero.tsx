@@ -17,7 +17,7 @@ export const Hero = () => {
             <img
               src="/lovable-uploads/b74851fa-3b87-4588-9319-133a74e3f0d0.png"
               alt="Soe Hein"
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-primary/20 shadow-lg"
+              className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full mx-auto mb-6 border-4 border-primary/20 shadow-xl object-cover"
             />
           </div>
           
