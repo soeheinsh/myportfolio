@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -6,34 +5,39 @@ export const Skills = () => {
   const skillCategories = [
     {
       title: "Backend",
-      skills: ["PHP", "Laravel", "Node.js"],
-      color: "bg-blue-500"
+      skills: ["PHP", "Laravel"],
+      color: "bg-blue-500",
     },
     {
       title: "Frontend",
-      skills: ["HTML", "CSS", "Bootstrap", "Vue.js", "React.js"],
-      color: "bg-green-500"
+      skills: ["HTML", "CSS", "Bootstrap", "Vue.js"],
+      color: "bg-green-500",
     },
     {
       title: "Database",
       skills: ["MySQL", "PostgreSQL", "Redis"],
-      color: "bg-purple-500"
+      color: "bg-purple-500",
     },
     {
       title: "Cloud Services",
       skills: ["AWS", "Digital Ocean"],
-      color: "bg-orange-500"
+      color: "bg-orange-500",
     },
     {
       title: "Tools",
       skills: ["Git", "Jira", "Microsoft Project Timeline"],
-      color: "bg-gray-500"
+      color: "bg-gray-500",
     },
     {
       title: "Third Party Integration",
-      skills: ["Real-time services", "Payment Gateways", "End-to-end project integration", "Firebase services"],
-      color: "bg-indigo-500"
-    }
+      skills: [
+        "Real-time services",
+        "Payment Gateways",
+        "End-to-end project integration",
+        "Firebase services",
+      ],
+      color: "bg-indigo-500",
+    },
   ];
 
   return (
@@ -49,18 +53,27 @@ export const Skills = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className={`w-3 h-3 rounded-full ${category.color} mr-3`}></div>
+                    <div
+                      className={`w-3 h-3 rounded-full ${category.color} mr-3`}
+                    ></div>
                     <h3 className="text-lg font-semibold text-foreground">
                       {category.title}
                     </h3>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
+                      <Badge
+                        key={skillIndex}
+                        variant="secondary"
+                        className="text-xs"
+                      >
                         {skill}
                       </Badge>
                     ))}
@@ -69,10 +82,11 @@ export const Skills = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center">
-            <p className="text-muted-foreground text-sm">
-              ** Familiar and capable of development (self-taught/personal projects)
+            <p className="ext-sm font-semibold text-foreground">
+              **** Node.js & React are Familiar and capable of development
+              (self-taught/personal projects)
             </p>
           </div>
         </div>
