@@ -1,10 +1,19 @@
-
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (stored) return stored === "dark";
+      // Default to dark mode if no preference
+      document.documentElement.classList.add("dark");
+      return true;
+    }
+    return true;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +22,16 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -56,6 +75,15 @@ export const Header = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => setIsDark((prev) => !prev)}
+                  className="ml-2 p-2 rounded-lg hover:bg-primary/10 transition-colors duration-200"
+                  aria-label="Toggle dark mode"
+                >
+                  {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -101,6 +129,17 @@ export const Header = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => setIsDark((prev) => !prev)}
+                  className="w-full flex items-center gap-2 px-4 py-3 text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg animate-fade-in"
+                  style={{ animationDelay: `${navItems.length * 50}ms` }}
+                  aria-label="Toggle dark mode"
+                >
+                  {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                  <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
